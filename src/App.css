@@ -1,0 +1,80 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.icon {
+  align-self: center;
+  justify-self: center;
+  animation-name: spin;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  font-size: 60px;
+}
+
+.iconheader {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+.calculator {
+  margin-top: 20px;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: repeat(5, 40px);
+  grid-row-gap: 3px;
+  grid-template-areas:
+  "header"
+  "input1"
+  "input2"
+  "buttons"
+  "answer";
+}
+
+.accounts {
+  margin-top: 20px;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.input1 {
+  grid-area: input1;
+  align-self: end;
+  text-align: center;
+}
+
+.input2 {
+  grid-area: input2;
+  align-self: start;
+  text-align: center;
+}
+
+.btn {
+  grid-area: buttons;
+  align-self: start;
+  display: grid;
+  grid-template-columns: repeat(4, 25px);
+  grid-column-gap: 3px;
+  align-items: center;
+  justify-content: center;
+
+}
