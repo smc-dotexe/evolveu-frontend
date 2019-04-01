@@ -27,16 +27,21 @@ class Accounts extends React.Component {
 
     switch(x) {
       case 'deposit' :
-      this.setState({balance: test.deposit(a)})
+        this.setState({
+          balance: test.deposit(a),
+          userInput: ''})
       break
       case 'withdraw' :
-      this.setState({balance: test.withdraw(a)})
+        this.setState({
+          balance: test.withdraw(a),
+          userInput: ''})
       break
       default :
-      console.log('hi')
+        return null
   }
-    console.log(x)
+
 }
+
 
   render() {
 
@@ -44,13 +49,15 @@ class Accounts extends React.Component {
     console.log(this.state.balance)
 
   return (
+    <div className = 'acctContainer'>
     <div className = 'accounts'>
 
       <h1>Current Balance: {this.state.balance} </h1>
-      <input type = 'number' name = 'userInput' onChange = {this.userState}/>
-      <button type = 'button' name = 'deposit' onClick = {this.clickHandler}>Deposit</button>
-      <button type = 'button' name = 'withdraw' onClick = {this.clickHandler}>Withdraw</button>
+      <input type = 'number' name = 'userInput' value = {this.state.userInput} onChange = {this.userState}/>
+      <button className = 'acctBtn' type = 'button' name = 'deposit' onClick = {this.clickHandler}>Deposit</button>
+      <button className = 'acctBtn' type = 'button' name = 'withdraw' onClick = {this.clickHandler}>Withdraw</button>
 
+    </div>
     </div>
   )
 }
