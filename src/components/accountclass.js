@@ -1,7 +1,6 @@
 class Account {
   constructor(initBalance, accountName) {
     this.initBalance = initBalance
-    this.accountName = accountName
   }
 
   deposit(a) {

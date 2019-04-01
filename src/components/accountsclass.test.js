@@ -1,9 +1,8 @@
 import Account from './accountclass'
 
-const instObj = new Account(50, 'chequings')
+const instObj = new Account(50)
 
 test('account exists', () => {
-  expect(instObj.accountName).toBe('chequings')
   expect(instObj.initBalance).toBe(50)
 })
 
