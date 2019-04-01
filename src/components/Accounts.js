@@ -8,7 +8,7 @@ class Accounts extends React.Component {
     this.state = {
       userInput: '',
       balance: '',
-      accountInit: new Account(0,''),
+      accountInit: new Account(0)
     }
 }
 
@@ -52,7 +52,8 @@ class Accounts extends React.Component {
     <div className = 'acctContainer'>
     <div className = 'accounts'>
 
-      <h1>Current Balance: {this.state.balance} </h1>
+      <h4 className = 'currBalanceTitle'>Current Balance:</h4>
+      <p className = 'userBalance'>${this.state.balance}</p>
       <input type = 'number' name = 'userInput' value = {this.state.userInput} onChange = {this.userState}/>
       <button className = 'acctBtn' type = 'button' name = 'deposit' onClick = {this.clickHandler}>Deposit</button>
       <button className = 'acctBtn' type = 'button' name = 'withdraw' onClick = {this.clickHandler}>Withdraw</button>

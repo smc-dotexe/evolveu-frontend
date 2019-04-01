@@ -1,7 +1,8 @@
 import React from 'react'
 import MathComp from './MathComp'
 import Accounts from './Accounts'
-import './../App.css'
+import AccountsContainer from './AccountsContainer'
+import '.././App.css'
 
 export default class Icons extends React.Component {
   state = {
@@ -63,7 +64,7 @@ export default class Icons extends React.Component {
 
       <div>
         {this.state.calculator ? <MathComp /> : null}
-        {this.state.accounts ? <Accounts /> : null}
+        {this.state.accounts ? <AccountsContainer /> : null}
       </div>
 
       </div>

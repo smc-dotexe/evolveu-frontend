@@ -81,5 +81,12 @@
 .acctBtn {
   width: 100px;
   margin: 5px auto;
+}
 
+.currBalanceTitle {
+  margin: 0;
+}
+
+.userBalance {
+  height: 20px;
 }
