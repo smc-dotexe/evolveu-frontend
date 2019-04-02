@@ -1,5 +1,4 @@
 
-
 class AccountsCtrl {
   constructor(acctArr, acctName) {
     this.acctArr = []
@@ -7,8 +6,11 @@ class AccountsCtrl {
   }
 
   addAccount(i) {
-    this.acctArr.push(i)
-    return this.acctArr
+    let x = this.acctArr
+    x.push(i)
+    console.log('AccountsCtrl: this.acctArr ', this.acctArr)
+    console.log('AccountsCtrl: i ', i)
+    return x
   }
 
   removeAccount(i) {

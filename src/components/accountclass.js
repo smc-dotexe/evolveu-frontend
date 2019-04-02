@@ -1,5 +1,5 @@
 class Account {
-  constructor(initBalance, accountName) {
+  constructor(initBalance) {
     this.initBalance = initBalance
   }
 

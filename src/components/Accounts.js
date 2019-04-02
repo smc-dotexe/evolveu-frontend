@@ -1,10 +1,12 @@
 import React from 'react'
 import '.././App.css'
 import Account from './accountclass'
+import AccountsCtrl from './AccountsCtrl'
+import AccountsContainer from './AccountsContainer'
 
 class Accounts extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       userInput: '',
       balance: '',
@@ -50,13 +52,22 @@ class Accounts extends React.Component {
 
   return (
     <div className = 'acctContainer'>
+    {/*Accounts Card*/}
     <div className = 'accounts'>
+      <select>
+        <option value = 'select'>Account Type</option>
+        <option value = 'chequings'>Chequings</option>
+        <option value = 'savings'>Savings</option>
+        <option value = 'rsvp'>RSVP</option>
+        <option value = 'tfsa'>TFSA</option>
+      </select>
+      <h4 className = 'currBalanceTitle'>Current Balance: $</h4>
+      <button className = 'deleteAcct' type = 'button' name = 'deleteAcct' onClick = {this.deleteAcct}>x</button>
+      <p className = 'userBalance'>{this.state.balance}</p>
+      <input className = 'userCurrency' type = 'number' name = 'userInput' placeholder = 'Enter Amount' value = {this.state.userInput} onChange = {this.userState}/>
+      <button className = 'acctBtnDep' type = 'button' name = 'deposit' onClick = {this.clickHandler}>Deposit</button>
+      <button className = 'acctBtnWdrw' type = 'button' name = 'withdraw' onClick = {this.clickHandler}>Withdraw</button>
 
-      <h4 className = 'currBalanceTitle'>Current Balance:</h4>
-      <p className = 'userBalance'>${this.state.balance}</p>
-      <input type = 'number' name = 'userInput' value = {this.state.userInput} onChange = {this.userState}/>
-      <button className = 'acctBtn' type = 'button' name = 'deposit' onClick = {this.clickHandler}>Deposit</button>
-      <button className = 'acctBtn' type = 'button' name = 'withdraw' onClick = {this.clickHandler}>Withdraw</button>
 
     </div>
     </div>

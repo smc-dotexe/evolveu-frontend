@@ -2,8 +2,9 @@ import AccountsCtrl from './AccountsCtrl'
 
 const accts = new AccountsCtrl(0, '')
 
+
 test('accounts array exist', () => {
-  expect(accts.addAccount(2000)).toContain(2000)
+  expect(accts.addAccount(2000).length).toBe(1)
 })
 
 test('adds or removes an item in the array', () => {

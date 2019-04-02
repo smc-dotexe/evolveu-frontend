@@ -4,30 +4,33 @@ import AccountsCtrl from './AccountsCtrl'
 class AccountsContainer extends React.Component {
 
   state = {
-    addAccount: [],
+    accountList: [],
     counter: 0,
     acctCtrl: new AccountsCtrl('', '')
   }
 
   clickHandler = (element) => {
     element = <Accounts key = {this.state.counter}/>
+    const test = this.state.acctCtrl
     this.setState({
-      addAccount: this.state.addAccount.concat(element),
+      accountList:  test.addAccount(element),
       counter: this.state.counter + 1
     })
+    console.log('AccountsContainer: this.state.acctCtrl ', this.state.acctCtrl)
+    console.log('AccountsContainer: clickHandler this.state.addAccount ', this.state.accountList)
   }
 
   render() {
-
     return(
     <div>
-      <div className = 'accounts'>
+      <div className = 'addAcctBtn'>
+
         <button type = 'button' onClick = {this.clickHandler}>
           Add Account
         </button>
       </div>
       <div>
-        {this.state.addAccount}
+        {this.state.accountList}
       </div>
     </div>
 

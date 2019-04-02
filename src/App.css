@@ -31,7 +31,9 @@
 
 
 
-
+/**************************************************
+CALCULATOR
+***********************************************/
 .calculator {
   margin-top: 20px;
   text-align: center;
@@ -46,14 +48,6 @@
   "input2"
   "buttons"
   "answer";
-}
-
-.accounts {
-  margin-top: 20px;
-  text-align: center;
-  display: grid;
-  justify-content: center;
-  align-items: center;
 }
 
 .input1 {
@@ -78,15 +72,80 @@
   justify-content: center;
 }
 
-.acctBtn {
-  width: 100px;
-  margin: 5px auto;
+/************************************
+ACCOUNTS
+*************************************/
+.addAcctBtn {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.acctContainer {
+  border: 1px solid black;
+  border-radius: 4px;
+  width: 30%;
+  margin: 6px auto;
+  padding-top: 0;
+
+}
+.accounts {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 45vh);
+  grid-template-rows: repeat(4, 35px);
+  grid-template-areas:
+   "type delete"
+   "title balance"
+   "currency currency"
+   "deposit withdraw";
+  justify-content: center;
+  align-items: center;
 }
 
-.currBalanceTitle {
+.accounts > .typeOfAccount {
+  grid-area: type;
+  justify-self: center;
+}
+
+.accounts > .deleteAcct {
+  grid-area: delete;
+  align-self: center;
+  justify-self: end;
+
+}
+
+.accounts > .currBalanceTitle {
   margin: 0;
+  grid-area: title;
+  justify-self: end;
 }
 
-.userBalance {
-  height: 20px;
+.accounts > .userBalance {
+  grid-area: balance;
+  justify-self: start;
+}
+
+.accounts > .userCurrency {
+  grid-area: currency;
+  justify-self: center;
+  text-align: center;
+}
+
+.accounts > .acctBtnDep {
+  grid-area: deposit;
+  justify-self: center;
+
+}
+
+.accounts > .acctBtnWdrw {
+  grid-area: withdraw;
+  justify-self: center;
+
+}
+
+button {
+  background: none;
+  border-radius: 4px;
+  font-family: inherit;
 }
