@@ -13,8 +13,10 @@ class AccountsCtrl {
     return x
   }
 
-  removeAccount(i) {
-    return this.acctArr.splice(i)
+  removeAccount(i, s) {
+    this.acctArr.splice(i,s)
+
+    return this.acctArr
   }
 
   nameAccount(i) {

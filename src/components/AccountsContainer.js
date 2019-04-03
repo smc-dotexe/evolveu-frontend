@@ -2,22 +2,44 @@ import React from 'react'
 import Accounts from './Accounts'
 import AccountsCtrl from './AccountsCtrl'
 class AccountsContainer extends React.Component {
-
-  state = {
-    accountList: [],
-    counter: 0,
-    acctCtrl: new AccountsCtrl('', '')
+  constructor(props) {
+    super(props)
+    this.state = {
+      accountList: [],
+      counter: 0,
+      acctCtrl: new AccountsCtrl('', '')
+    }
   }
 
-  clickHandler = (element) => {
-    element = <Accounts key = {this.state.counter}/>
-    const test = this.state.acctCtrl
-    this.setState({
-      accountList:  test.addAccount(element),
-      counter: this.state.counter + 1
-    })
+
+
+  clickHandler = (element, event) => {
+    element = <Accounts key = {this.state.counter} count = {this.state.counter} del = {this.deleteAcct}/>
+    console.log('element ', element)
+
+        this.setState({
+          accountList:  this.state.acctCtrl.addAccount(element),
+          counter: this.state.counter + 1
+        })
     console.log('AccountsContainer: this.state.acctCtrl ', this.state.acctCtrl)
-    console.log('AccountsContainer: clickHandler this.state.addAccount ', this.state.accountList)
+    console.log('AccountsContainer: this.state.accountList ', this.state.accountList)
+  }
+
+  deleteAcct = () => {
+    let b = this.state.accountList.map(a=>a.props.count)
+
+    // for(b in this.state.accountList) {
+    //   // this.setState({
+    //   //   accountList: this.state.acctCtrl.removeAccount(b, 1),
+    //   // })
+    //   console.log(b)
+    // }
+    this.setState({
+      accountList: this.state.acctCtrl.removeAccount(b, 1),
+      counter: this.state.counter -1
+    })
+
+
   }
 
   render() {
