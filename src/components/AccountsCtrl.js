@@ -6,17 +6,12 @@ class AccountsCtrl {
   }
 
   addAccount(i) {
-    let x = this.acctArr
-    x.push(i)
-    console.log('AccountsCtrl: this.acctArr ', this.acctArr)
-    console.log('AccountsCtrl: i ', i)
-    return x
+    this.acctArr.push(i)
+    return this.acctArr
   }
 
   removeAccount(i, s) {
     this.acctArr.splice(i,s)
-    console.log('AccountsCtrl: this.acctArr ', this.acctArr)
-
     return this.acctArr
   }
 

@@ -62,7 +62,7 @@ class Accounts extends React.Component {
         <option value = 'tfsa'>TFSA</option>
       </select>
       <h4 className = 'currBalanceTitle'>Current Balance: $</h4>
-      <button className = 'deleteAcct' type = 'button' name = 'deleteAcct' onClick = {this.props.del}>x</button>
+      <button className = 'deleteAcct' type = 'button' name = 'deleteAcct' pass = {this.props.pass} onClick = {this.props.del}>x</button>
       <p className = 'userBalance'>{this.state.balance}</p>
       <input className = 'userCurrency' type = 'number' name = 'userInput' placeholder = 'Enter Amount' value = {this.state.userInput} onChange = {this.userState}/>
       <button className = 'acctBtnDep' type = 'button' name = 'deposit' onClick = {this.clickHandler}>Deposit</button>

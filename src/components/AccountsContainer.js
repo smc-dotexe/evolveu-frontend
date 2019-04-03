@@ -6,43 +6,36 @@ class AccountsContainer extends React.Component {
     super(props)
     this.state = {
       accountList: [],
-      counter: -1,
+      counter: 0,
       key: 0,
       acctCtrl: new AccountsCtrl('', '')
     }
   }
 
 
-
-  clickHandler = (element, event) => {
-    element = <Accounts key = {this.state.key} count = {this.state.counter} del = {this.deleteAcct}/>
-    console.log('element ', element)
+//Passing the accounts component to the controller array. Then it comes back in to accountList array.
+  clickHandler = (element) => {
+    element = <Accounts key = {this.state.key} count = {this.state.counter} pass = {this.state.counter} del = {this.deleteAcct}/>
 
         this.setState({
           accountList:  this.state.acctCtrl.addAccount(element),
           counter: this.state.counter + 1,
           key: this.state.key + 1
         })
-    console.log('AccountsContainer: this.state.acctCtrl ', this.state.acctCtrl)
-    console.log('AccountsContainer: this.state.accountList ', this.state.accountList)
-  }
-
-  deleteAcct = () => {
-    let b = this.state.accountList.map(a=>a.props.count)
-    console.log(b)
-    // for(b in this.state.accountList) {
-    //   // this.setState({
-    //   //   accountList: this.state.acctCtrl.removeAccount(b, 1),
-    //   // })
-    //   console.log(b)
-    // }
-    this.setState({
-      accountList: this.state.acctCtrl.removeAccount(b, 1),
-      counter: this.state.counter -1
-    })
-
 
   }
+
+  deleteAcct = (event) => {
+    let a = Number([event.target.getAttribute('pass')])
+    let b = this.state.accountList.map(k => k.props.count)
+    let c = b.indexOf(a)
+
+this.setState({
+  accountList: this.state.acctCtrl.removeAccount(c, 1),
+  counter: this.state.counter -1
+})
+
+}
 
   render() {
     return(
