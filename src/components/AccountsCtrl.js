@@ -15,6 +15,7 @@ class AccountsCtrl {
 
   removeAccount(i, s) {
     this.acctArr.splice(i,s)
+    console.log('AccountsCtrl: this.acctArr ', this.acctArr)
 
     return this.acctArr
   }
