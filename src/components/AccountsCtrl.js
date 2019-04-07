@@ -1,7 +1,8 @@
 
 class AccountsCtrl {
-  constructor(acctArr, acctName) {
+  constructor(acctArr, acctName, balanceArr) {
     this.acctArr = []
+    this.balanceArr = []
     this.acctName = acctName
   }
 
@@ -25,6 +26,15 @@ class AccountsCtrl {
 
   lowestValue() {
     return Math.min(...this.acctArr)
+  }
+
+  totalValue(i) {
+    this.balanceArr.push(i)
+    let g
+    for (g of this.balanceArr) {
+      g += g
+    }
+    return g
   }
 }
 

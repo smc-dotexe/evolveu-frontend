@@ -18,20 +18,23 @@ class Accounts extends React.Component {
   userState = (event) => {
     const { name, value } = event.target
     this.setState({ [name] : value})
+
   }
 
 //attached to the deposit and withdraw buttons
   clickHandler = (event) => {
-    let x, a
+    let x, a, j
     x = event.target.name
     a = Number(this.state.userInput)
     const test = this.state.accountInit
-
+    j = this.props.currBalance
     switch(x) {
       case 'deposit' :
+        
         this.setState({
           balance: test.deposit(a),
           userInput: ''})
+
       break
       case 'withdraw' :
         this.setState({
@@ -41,20 +44,21 @@ class Accounts extends React.Component {
       default :
         return null
   }
-
 }
+
+  // passingBalance = () => {
+  //   console.log('passingBalance ', this.state.balance)
+  //   this.props.currBalance(this.state.balance)
+  // }
 
 
   render() {
-
-    console.log(this.state.userInput)
-    console.log(this.state.balance)
 
   return (
     <div className = 'acctContainer'>
     {/*Accounts Card*/}
     <div className = 'accounts'>
-      <select>
+      <select id = 'selectOptions'>
         <option value = 'select'>Account Type</option>
         <option value = 'chequings'>Chequings</option>
         <option value = 'savings'>Savings</option>
@@ -63,10 +67,11 @@ class Accounts extends React.Component {
       </select>
       <h4 className = 'currBalanceTitle'>Current Balance: $</h4>
       <button className = 'deleteAcct' type = 'button' name = 'deleteAcct' pass = {this.props.pass} onClick = {this.props.del}>x</button>
-      <p className = 'userBalance'>{this.state.balance}</p>
-      <input className = 'userCurrency' type = 'number' name = 'userInput' placeholder = 'Enter Amount' value = {this.state.userInput} onChange = {this.userState}/>
+      <p className = 'userBalance' id = 'theValue' currbalance = {this.props.currbalance}>{this.state.balance}</p>
+      <input className = 'userCurrency' type = 'number' name = 'userInput' placeholder = 'Enter Amount' value = {this.state.userInput} onChange = {this.userState} />
       <button className = 'acctBtnDep' type = 'button' name = 'deposit' onClick = {this.clickHandler}>Deposit</button>
       <button className = 'acctBtnWdrw' type = 'button' name = 'withdraw' onClick = {this.clickHandler}>Withdraw</button>
+      {/*<button className = 'confirm' type = 'button' name = 'confirm' onClick = {this.passingBalance}>Save</button>*/}
 
 
     </div>

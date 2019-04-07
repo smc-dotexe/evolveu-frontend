@@ -25,6 +25,10 @@ test('find lowest value in the account array', () => {
   expect(accts.lowestValue()).toBe(25)
 })
 
+test('find the total balance of all accounts', () => {
+  expect(accts.totalValue()).toBe(490)
+})
+
 test('create an account name', () => {
   expect(accts.nameAccount('savings')).toBe('savings')
 })

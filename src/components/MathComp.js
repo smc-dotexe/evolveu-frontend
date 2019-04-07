@@ -39,7 +39,7 @@ export default class MathComp extends Component {
       break
 
     default:
-      console.log('uh oh, what happened')
+      console.log('wat')
     }
   }
 
