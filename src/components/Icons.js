@@ -63,7 +63,7 @@ export default class Icons extends React.Component {
           </div>
 
       <div>
-        {this.state.calculator ? <MathComp /> : null}
+        {this.state.calculator ===true  ? <MathComp /> : null}
         {this.state.accounts ? <AccountsContainer /> : null}
       </div>
 

@@ -14,6 +14,8 @@ class Accounts extends React.Component {
     }
 }
 
+
+
 //setting state of userInput to input box value
   userState = (event) => {
     const { name, value } = event.target
@@ -23,18 +25,15 @@ class Accounts extends React.Component {
 
 //attached to the deposit and withdraw buttons
   clickHandler = (event) => {
-    let x, a, j
+    let x, a
     x = event.target.name
     a = Number(this.state.userInput)
     const test = this.state.accountInit
-    j = this.props.currBalance
     switch(x) {
       case 'deposit' :
-        
         this.setState({
           balance: test.deposit(a),
           userInput: ''})
-
       break
       case 'withdraw' :
         this.setState({
@@ -44,6 +43,8 @@ class Accounts extends React.Component {
       default :
         return null
   }
+  console.log('state.balance: ' + this.state.balance)
+  this.props.currbalance(Number(this.state.balance))
 }
 
   // passingBalance = () => {
@@ -53,6 +54,7 @@ class Accounts extends React.Component {
 
 
   render() {
+
 
   return (
     <div className = 'acctContainer'>
@@ -67,7 +69,7 @@ class Accounts extends React.Component {
       </select>
       <h4 className = 'currBalanceTitle'>Current Balance: $</h4>
       <button className = 'deleteAcct' type = 'button' name = 'deleteAcct' pass = {this.props.pass} onClick = {this.props.del}>x</button>
-      <p className = 'userBalance' id = 'theValue' currbalance = {this.props.currbalance}>{this.state.balance}</p>
+      <p className = 'userBalance' id = 'theValue'>{this.state.balance}</p>
       <input className = 'userCurrency' type = 'number' name = 'userInput' placeholder = 'Enter Amount' value = {this.state.userInput} onChange = {this.userState} />
       <button className = 'acctBtnDep' type = 'button' name = 'deposit' onClick = {this.clickHandler}>Deposit</button>
       <button className = 'acctBtnWdrw' type = 'button' name = 'withdraw' onClick = {this.clickHandler}>Withdraw</button>
