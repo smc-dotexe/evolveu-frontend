@@ -24,13 +24,7 @@ class AccountsContainer extends React.Component {
     console.log('state.currentbalance: ' + this.state.currentbalance)
 
   }
-  // balanceArr = (a) => {
-  //   console.log('balanceArr ', a)
-  //   this.state.currentBalance.push('card1: '+ a)
-  //
-  //   // this.setState({currentBalance: this.state.currentBalance.push(a)})
-  //   console.log('currentBalance state ', this.state.currentBalance)
-  // }
+
 
 
 
