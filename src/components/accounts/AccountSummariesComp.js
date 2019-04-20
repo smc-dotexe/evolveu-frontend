@@ -7,19 +7,19 @@ class AccountSummariesComp extends React.Component {
     const propsObjLength = this.props.passObj.accountArr.length
     return (
       <div>
-        <h4 className = 'totalAccount'>Total of Balances:{' '}${propsObj.totalAccounts()} </h4>
+        <h6 className = 'totalAccount'>Total of Balances:{' '}${propsObj.totalAccounts()} </h6>
 
-        <h4 className = 'highestAccount'>
+        <h6 className = 'highestAccount'>
           Highest Account:{'  '}
           {propsObjLength > 0 ? propsObj.highestAccount().accountName : null}{'    '}$
           {propsObjLength > 0 ? propsObj.highestAccount().balance : null}
-        </h4>
+        </h6>
 
-        <h4 className = 'lowestAccount'>
+        <h6 className = 'lowestAccount'>
           Lowest Account:{'  '}
           {propsObjLength > 0 ? propsObj.lowestAccount().accountName : null}{'    '}$
           {propsObjLength > 0 ? propsObj.lowestAccount().balance : null}
-        </h4>
+        </h6>
       </div>
 
 

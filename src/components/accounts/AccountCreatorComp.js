@@ -4,9 +4,10 @@ class AccountCreatorComp extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className = 'creatorContents'>
       <button
         type = 'button'
+        id = 'xBtn'
         onClick = {this.props.passClickHideDisplay}>
           x
       </button><br />
@@ -27,6 +28,7 @@ class AccountCreatorComp extends React.Component {
 {/*CREATE ACCOUNT BUTTON */}
       <button
         type = 'button'
+        id = 'createBtn'
         onClick = {this.props.passCreateAccount}>
           Create Account
       </button>

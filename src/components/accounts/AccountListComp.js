@@ -27,6 +27,8 @@ class AccountListComp extends React.Component {
   render(){
     const list = this.props.passArray.map((x, b)=>
         <li key = {b}>
+          <strong>Name:</strong> {x.accountName}<br />
+          <strong>Balance:</strong> $ <u>{x.balance}</u><br />
           <button className ='editBtn'  id= {b} onClick = {this.props.passAccountWindow} >
             Edit Account
           </button><br />
@@ -34,19 +36,12 @@ class AccountListComp extends React.Component {
             Delete Account
           </button><br />
 
-          <strong>Name:</strong> {x.accountName}<br />
-          <strong>Balance:</strong> $ <u>{x.balance}</u>
+
 
         </li>)
     return(
-      <div>
-          <div>
-              <div className = 'list'>
+      <div className = 'list'>
                 <ul>{list}</ul>
-              </div>
-
-          </div>
-
       </div>
     )
   }

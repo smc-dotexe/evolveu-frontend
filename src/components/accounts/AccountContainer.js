@@ -94,8 +94,9 @@ class AccountContainer extends React.Component {
            : null}
 
 {/*ACCOUNTS LIST */}
-        <div className = 'accountsList'>
+
           {this.state.displayAccountList ?
+          <div className = 'accountsList'>
             <AccountListComp
               passArray = {this.objAccountCtrl.accountArr}
               obj = {this.objAccountCtrl}
@@ -103,8 +104,9 @@ class AccountContainer extends React.Component {
               passAccountsIdState = {this.state.accountsIdState}
               passCloseDisplay = {this.closeDisplay}
               passDisplayAccountComp = {this.state.displayAccountComp}/>
+          </div>
           : null }
-        </div>
+
 
 {/*INDIVIDUAL ACCOUNT*/}
       {this.state.displayAccountComp ?

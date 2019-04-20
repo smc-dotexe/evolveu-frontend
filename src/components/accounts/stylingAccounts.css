@@ -41,11 +41,16 @@ button {
 }
 
 li {
-  border: 1px solid gray;
-  border-radius: 3px;
-  margin-top: 3px;
-  padding: 5px;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-bottom: 10px;
   list-style: none;
+}
+
+li > button {
+  border: none;
 }
 
 ul {
@@ -53,63 +58,86 @@ ul {
 }
 .container {
   display: grid;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 50px auto 0 auto;
   width: 80%;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 40px 80px 118px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 40px 80px 130px 1fr;
   grid-template-areas:
-    "header summaries"
-    "button summaries"
-    "createaccount ."
-    "listArr accountComp";
+    ". header ."
+    ". button summaries"
+    ". createaccount ."
+    ". listArr accountComp";
   justify-content: center;
   align-items: center;
 }
 
 .containerHeader {
   grid-area: header;
-  justify-self: start;
+  justify-self: center;
   align-self: center;
 }
 
 .accountSummaries {
   grid-area: summaries;
-  justify-self: end;
+  justify-self: center;
   align-self: center;
 }
 .newAccountBtn {
   width: 80px;
   grid-area: button;
-  justify-self: start;
+  justify-self: center;
   align-self: end;
   background: none;
   border: 1px solid gray;
   border-radius: 2px;
 }
+/*ACCOUNT CREATOR DIV*/
 .newAccountDiv {
   width: 200px;
+  text-align: center;
   grid-area: createaccount;
-  justify-self: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
   padding: 5px;
   border: 1px solid black;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
+#xBtn {
+  margin-right: 170px;
+  border: none;
+}
+
+#inputAccountName {
+  text-align: center;
+}
+
+#inputAccountBalance {
+  text-align: center;
+}
+
+/*ACCOUNT LIST*/
 .accountsList {
+  border: 1px solid black;
+  border-radius: 3px;
   grid-area: listArr;
   width: 200px;
   padding: 5px;
-  justify-self: start;
+  justify-self: center;
+  align-self: start;
   list-style: none;
+  text-align: center;
 }
 
 .accountComponent {
   grid-area: accountComp;
-  justify-self: start;
-  align-self: center;
+  justify-self: center;
+  align-self: start;
+  text-align: center;
   width: 200px;
-  padding: 7px;
+  padding: 5px;
   border: 1px solid black;
   border-radius: 2px;
 }
@@ -119,11 +147,4 @@ ul {
 }
 .accountComponent > button {
   margin-right: 5px;
-}
-#inputAccountName {
-  text-align: center;
-}
-
-#inputAccountBalance {
-  text-align: center;
 }

@@ -31,13 +31,15 @@ class AccountComponent extends React.Component {
     switch (y) {
       case 'deposit':
         console.log('userinput state = ', x)
-        this.props.passObj[theId].balance = this.props.objCtrl.depositUpdate(theId, x)
+        this.props.passObj[theId].balance =
+        this.props.objCtrl.depositUpdate(theId, x)
         this.setState({
           userInput: '',
       })
       break
       case 'withdrawal':
-        this.props.passObj[theId].balance = this.props.objCtrl.withdrawalUpdate(theId, x)
+        this.props.passObj[theId].balance =
+        this.props.objCtrl.withdrawalUpdate(theId, x)
         this.setState({userInput: ''})
       break
       default:
@@ -50,9 +52,17 @@ class AccountComponent extends React.Component {
       let theId = this.props.passId
     return(
       <div className = 'accountComponent'>
-        <button type = 'button' name = 'closeAccount' onClick = {this.props.passDisplay}>x</button>
+        <button
+          id = 'xBtn'
+          type = 'button'
+          name = 'closeAccount'
+          onClick = {this.props.passDisplay}>
+            x
+        </button>
+
         <h4>Account: {this.props.passObj[theId].accountName}</h4>
         <h4>Current Balance: ${this.props.passObj[theId].balance}</h4>
+
         <input
           type = 'number'
           id = 'userInput'
@@ -60,9 +70,27 @@ class AccountComponent extends React.Component {
           name = 'userInput'
           placeholder = 'Enter Amount'
           onChange = {this.changeHandler}/><br />
-        <button type = 'button' name = 'deposit' onClick = {this.clickHandler}>Deposit</button>
-        <button type = 'button' name = 'withdrawal' onClick = {this.clickHandler}>Withdrawal</button><br />
-        <button type = 'button' name = 'doneAccount' onClick = {this.props.passDisplay}>Done</button>
+
+        <button
+          type = 'button'
+          name = 'deposit'
+          onClick = {this.clickHandler}>
+            Deposit
+        </button>
+
+        <button
+          type = 'button'
+          name = 'withdrawal'
+          onClick = {this.clickHandler}>
+            Withdrawal
+        </button><br />
+
+        <button
+          type = 'button'
+          name = 'doneAccount'
+          onClick = {this.props.passDisplay}>
+            Done
+        </button>
 
       </div>
     )
