@@ -1,13 +1,15 @@
 import React from 'react'
 import MathComp from './MathComp'
-import Accounts from './Accounts'
-import AccountsContainer from './AccountsContainer'
+import AccountComponent from './accounts/AccountComponent'
+import AccountsContainer from './accounts/AccountContainer'
+import './accounts/stylingAccounts.css'
 import '.././App.css'
 
 export default class Icons extends React.Component {
   state = {
     isClicked: false,
     calculator: false,
+    account: false,
     accounts: false,
   }
 
@@ -45,15 +47,27 @@ export default class Icons extends React.Component {
           <div className = 'iconheader'>
 
           <div className = 'icon'>
-            <i id = 'calculator' className= 'uil uil-calcualtor' value = {this.state.calculator} onClick = {this.clickHandler}></i>
+            <i
+              id = 'calculator'
+              className= 'uil uil-calcualtor'
+              value = {this.state.calculator}
+              onClick = {this.clickHandler}></i>
           </div>
 
           <div className = 'icon'>
-            <i id = 'accounts' className= 'uil uil-bill' value = {this.state.accounts} onClick = {this.clickHandler}></i>
+            <i
+              id = 'accounts'
+              className= 'uil uil-bill'
+              value = {this.state.accounts}
+              onClick = {this.clickHandler}></i>
           </div>
 
           <div className = 'icon'>
-            <i className='uil uil-meh'></i>
+            <i
+              id = 'account'
+              className='uil uil-meh'
+              value = {this.state.account}
+              onClick = {this.clickHandler}></i>
           </div>
 
           <div className = 'icon'>
@@ -63,8 +77,9 @@ export default class Icons extends React.Component {
           </div>
 
       <div>
-        {this.state.calculator ===true  ? <MathComp /> : null}
+        {this.state.calculator ? <MathComp /> : null}
         {this.state.accounts ? <AccountsContainer /> : null}
+
       </div>
 
       </div>

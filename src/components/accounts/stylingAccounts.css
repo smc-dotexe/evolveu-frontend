@@ -1,0 +1,129 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/***************************************************
+*********************ACCOUNTS**********************
+*****************************************************/
+button {
+  background: none;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+li {
+  border: 1px solid gray;
+  border-radius: 3px;
+  margin-top: 3px;
+  padding: 5px;
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+.container {
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 40px 80px 118px 1fr;
+  grid-template-areas:
+    "header summaries"
+    "button summaries"
+    "createaccount ."
+    "listArr accountComp";
+  justify-content: center;
+  align-items: center;
+}
+
+.containerHeader {
+  grid-area: header;
+  justify-self: start;
+  align-self: center;
+}
+
+.accountSummaries {
+  grid-area: summaries;
+  justify-self: end;
+  align-self: center;
+}
+.newAccountBtn {
+  width: 80px;
+  grid-area: button;
+  justify-self: start;
+  align-self: end;
+  background: none;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+.newAccountDiv {
+  width: 200px;
+  grid-area: createaccount;
+  justify-self: start;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.accountsList {
+  grid-area: listArr;
+  width: 200px;
+  padding: 5px;
+  justify-self: start;
+  list-style: none;
+}
+
+.accountComponent {
+  grid-area: accountComp;
+  justify-self: start;
+  align-self: center;
+  width: 200px;
+  padding: 7px;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.accountComponent > h4 {
+  margin: 0;
+}
+.accountComponent > button {
+  margin-right: 5px;
+}
+#inputAccountName {
+  text-align: center;
+}
+
+#inputAccountBalance {
+  text-align: center;
+}

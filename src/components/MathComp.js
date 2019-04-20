@@ -47,7 +47,7 @@ export default class MathComp extends Component {
 
     return (
       <form className = 'calculator'>
-        <h1 className = 'calcTitle'>From MathComp</h1>
+        <h1 className = 'calcTitle'>Calculator</h1>
 
         <input className = 'input1' type = 'number' name = 'firstNum' value = {this.state.firstNum} onChange = {this.settingState} />
         <input className = 'input2' type = 'number' name = 'secondNum' value = {this.state.secondNum} onChange = {this.settingState} />
