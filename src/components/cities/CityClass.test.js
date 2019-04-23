@@ -9,3 +9,8 @@ test('test if CityClass functions work', () => {
     expect(city.population).toBe(650000)
     expect(city.howBig()).toBe('City')
 })
+
+test('default values of CityClass', () => {
+  let city = new CityClass()
+  expect(city.name).toEqual('a place')
+})

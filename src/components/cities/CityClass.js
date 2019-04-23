@@ -1,5 +1,5 @@
 class City {
-  constructor(id, name, latitude, longitude, population){
+  constructor(id = 0, name = 'a place', latitude = 0, longitude = 0, population = 0){
     this.id = id
     this.name = name
     this.latitude = latitude
@@ -8,30 +8,28 @@ class City {
   }
 
   show() {
-    let x = `Name: ${this.name}, Latitude: ${this.latitude}, Longitude: ${this.longitude}, Population: ${this.population}`
-    return x
+    return `Name: ${this.name}, Latitude: ${this.latitude}, Longitude: ${this.longitude}, Population: ${this.population}`
   }
 
   movedIn(a) {
-    let x = this.population += a
-    return x
+    return this.population += a
   }
 
   movedOut(a) {
-    let x = this.population -= a
-    return x
+    return this.population -= a
   }
 
-  howBig(a) {
-    if (this.population > 100000) {
+  howBig() {
+    let x = this.population
+    if (x > 100000) {
         return 'City'
-      } else if (this.population > 20000 && this.population <= 100000) {
+      } else if (x > 20000 && x <= 100000) {
         return 'Large Town'
-      } else if (this.population > 1000 && this.population <= 20000) {
+      } else if (x > 1000 && x <= 20000) {
         return 'Town'
-      } else if (this.population > 100 && this.population <= 1000) {
+      } else if (x > 100 && x <= 1000) {
         return 'Village'
-      } else if (this.population >= 1 && this.population <= 100) {
+      } else if (x >= 1 && x <= 100) {
         return 'Hamlet'
       } else {
         return null

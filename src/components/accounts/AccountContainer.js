@@ -23,10 +23,7 @@ class AccountContainer extends React.Component {
         counter: -1,
       }
   }
-    onChange = (event) => {
-      const {name, value} = event.target
-      this.setState({ [name] : value })
-    }
+
 //WHEN CLICKING 'NEW ACCOUNT BUTTON', IT WILL DISPLAY 'CREATE ACCOUNT' BOX
     clickDisplay = () => {
       this.setState({display: true})
@@ -68,11 +65,20 @@ class AccountContainer extends React.Component {
     })
   }
 
+  //WHEN DELETE BUTTON IS CLICKED
+  deleteAccount = (event) => {
+    let x = event.target.id
+    let accountId = this.objAccountCtrl.accountArr[x].accountId
+
+    this.objAccountCtrl.deleteAccount(accountId)
+
+    this.closeDisplay()
+  }
+
   //CLOSING ACCOUNT COMP WINDOW
   closeDisplay = () => {
     this.setState({displayAccountComp: false})
   }
-
 
   render() {
 
@@ -104,6 +110,7 @@ class AccountContainer extends React.Component {
               passArray = {this.objAccountCtrl.accountArr}
               obj = {this.objAccountCtrl}
               passAccountWindow = {this.accountWindow}
+              passDeleteAccount = {this.deleteAccount}
               passAccountsIdState = {this.state.accountsIdState}
               passCloseDisplay = {this.closeDisplay}
               passDisplayAccountComp = {this.state.displayAccountComp}/>

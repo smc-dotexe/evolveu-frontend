@@ -39,10 +39,8 @@ class AccountCtrl {
   }
 
   depositUpdate(a, b) {
-    console.log('deposit update a and b = ', a, b)
     let arrayBalance = this.accountArr[a].balance
     arrayBalance += b
-    console.log(this.accountArr)
     return arrayBalance
   }
 
@@ -56,8 +54,6 @@ class AccountCtrl {
     let x = this.accountArr.findIndex(function(e){return e.accountId === a})
     return x
   }
-
-
 
   deleteAccount(s) {
       let a = this.findAccountIndex(s)
