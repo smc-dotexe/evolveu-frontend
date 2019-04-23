@@ -79,7 +79,7 @@ ul {
 
 .accountSummaries {
   grid-area: summaries;
-  justify-self: center;
+  justify-self: start;
   align-self: center;
 }
 .newAccountBtn {
@@ -133,7 +133,7 @@ ul {
 
 .accountComponent {
   grid-area: accountComp;
-  justify-self: center;
+  justify-self: start;
   align-self: start;
   text-align: center;
   width: 200px;

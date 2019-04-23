@@ -9,34 +9,44 @@ export default class Icons extends React.Component {
   state = {
     isClicked: false,
     calculator: false,
-    account: false,
     accounts: false,
+    cities: false,
   }
 
   clickHandler = (event) => {
-    let x = event.target.id
+    const { id } = event.target
+    console.log(id)
+    switch(id) {
+      case 'calculator' :
+        this.setState(prevState => ({
+          calculator: !prevState.calculator,
+          accounts: false,
+          cities: false,
+        }))
+        break
 
-    if (x === 'calculator') {
-      this.setState(prevState => ({calculator: !prevState.calculator}))
-      this.setState({accounts: false})
+      case 'accounts' :
+        this.setState(prevState => ({
+          accounts: !prevState.accounts,
+          calculator: false,
+          cities: false,
+        }))
+        break
 
-    } else if (x === 'accounts') {
-      this.setState(prevState => ({accounts: !prevState.accounts}))
-      this.setState({calculator: false})
+      case 'cities' :
+        this.setState(prevState => ({
+          cities: !prevState.cities,
+          calculator: false,
+          accounts: false,
+        }))
+        console.log('clicked')
+      default:
+        return null
 
-    } else {
-      return null
     }
 
 }
 
-  test = (event) => {
-    const { id } = event.target
-    console.log(id)
-    this.setState((prevState, event) => ({
-    [id]: !prevState.id
-    }))
-  }
 
   render() {
 
@@ -64,9 +74,9 @@ export default class Icons extends React.Component {
 
           <div className = 'icon'>
             <i
-              id = 'account'
-              className='uil uil-meh'
-              value = {this.state.account}
+              id = 'cities'
+              className = 'uil uil-building'
+              value = {this.state.cities}
               onClick = {this.clickHandler}></i>
           </div>
 

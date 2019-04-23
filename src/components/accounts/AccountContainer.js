@@ -7,18 +7,21 @@ import AccountCreatorComp from './AccountCreatorComp'
 import './stylingAccounts.css'
 
 class AccountContainer extends React.Component {
-  constructor(objAccountCtrl, props){
-    super(objAccountCtrl, props)
+  constructor(){
+    super()
       this.objAccountCtrl = new AccountController()
 
+      this.style = {
+        border: this.objAccountCtrl.accountArr.length > 0 ? '1px solid black' : 'none'
+      }
 
-    this.state = {
-      display: false,
-      displayAccountList: false,
-      displayAccountComp: false,
-      accountsIdState:'',
-      counter: -1,
-    }
+      this.state = {
+        display: false,
+        displayAccountList: false,
+        displayAccountComp: false,
+        accountsIdState:'',
+        counter: -1,
+      }
   }
     onChange = (event) => {
       const {name, value} = event.target
@@ -96,7 +99,7 @@ class AccountContainer extends React.Component {
 {/*ACCOUNTS LIST */}
 
           {this.state.displayAccountList ?
-          <div className = 'accountsList'>
+          <div className = 'accountsList' style = {this.style}>
             <AccountListComp
               passArray = {this.objAccountCtrl.accountArr}
               obj = {this.objAccountCtrl}

@@ -10,10 +10,6 @@ class AccountListComp extends React.Component {
 
   }
 
-//WHEN EDIT BUTTON IS CLICKED. ACCOUNT COMPONENT WINDOW SHOWS WITH SELECTED DATA
-
-
-
 //DELETE SPECIFIC ACCOUNT FUNCTION
   deleteAccount = (event) => {
     let x = event.target.id
@@ -29,15 +25,12 @@ class AccountListComp extends React.Component {
         <li key = {b}>
           <strong>Name:</strong> {x.accountName}<br />
           <strong>Balance:</strong> $ <u>{x.balance}</u><br />
-          <button className ='editBtn'  id= {b} onClick = {this.props.passAccountWindow} >
+          <button className ='editBtn'  id= {b} onClick = {this.props.passAccountWindow}>
             Edit Account
           </button><br />
           <button className = 'listBtn' type = 'button' id = {b} onClick = {this.deleteAccount}>
             Delete Account
           </button><br />
-
-
-
         </li>)
     return(
       <div className = 'list'>
