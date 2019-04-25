@@ -12,6 +12,20 @@ table {
   border: 1px solid gray;
 }
 
+td > h4 {
+  margin: 0;
+}
+
 input {
   text-align: center;
+}
+
+.editWindow {
+  border: 1px solid gray;
+}
+
+li {
+  border: none;
+  margin: 0;
+  font-size: 12px;
 }

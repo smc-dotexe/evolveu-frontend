@@ -1,3 +1,7 @@
+import CommunityClass from './CommunityClass'
+
+// const commClass = new CommunityClass()
+// const arr = commClass.communityArr
 class City {
   constructor(id = 0, name = 'a place', latitude = 0, longitude = 0, population = 0){
     this.id = id
@@ -11,11 +15,11 @@ class City {
     return `Name: ${this.name}, Latitude: ${this.latitude}, Longitude: ${this.longitude}, Population: ${this.population}`
   }
 
-  movedIn(a) {
+  movedIn(a, b) {
     return this.population += a
   }
 
-  movedOut(a) {
+  movedOut(a, b) {
     return this.population -= a
   }
 
