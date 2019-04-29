@@ -26,7 +26,7 @@ class PopulationComp extends React.Component {
   }
 
   render() {
-    console.log('passcommarr from popcomp ', this.props.passCommArr)
+    
     return(
       <div>
         <input type = 'number' id = 'userInputPop' placeholder = 'Edit Population' /><br />

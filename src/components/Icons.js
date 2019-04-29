@@ -39,7 +39,7 @@ export default class Icons extends React.Component {
           calculator: false,
           accounts: false,
         }))
-        console.log('clicked')
+        break
       default:
         return null
 

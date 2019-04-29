@@ -8,6 +8,10 @@ table {
   margin-right: auto;
 }
 
+#table {
+  margin-top: 100px;
+}
+
  td {
   border: 1px solid gray;
 }
@@ -20,12 +24,62 @@ input {
   text-align: center;
 }
 
-.editWindow {
-  border: 1px solid gray;
+#editUl {
+  width:100%;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
-li {
+.editLi {
+  float: left;
   border: none;
-  margin: 0;
+  margin-left: 40px;
   font-size: 12px;
+}
+
+.commCityComp {
+  /* border: 1px solid black; */
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 100px 200px;
+  grid-template-areas:
+    "header header"
+    "summaries edit"
+    "table table";
+}
+
+#cityHeader {
+  grid-area: header;
+}
+
+#renderTable {
+  grid-area: table;
+  justify-self: center;
+  align-self: center;
+}
+#editWindow {
+  grid-area: edit;
+  width: 500px;
+  height: 200px;
+}
+
+#citySummaries {
+  margin-left: 50px;
+  grid-area: summaries;
+  justify-self: center;
+}
+#editWindowComponent{
+  display: block;
+  border: 1px solid gray;
+  padding: 5px;
+
+}
+
+#citySummUl {
+  font-size: 12px;
+}
+
+.citySummLi {
+  border: none;
 }

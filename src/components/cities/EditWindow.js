@@ -13,25 +13,25 @@ class EditWindow extends React.Component {
     let x = this.props.passArrIdState
 
     return(
-      <div className = 'editWindow'>
-      
+      <div id = 'editWindowComponent'>
+
         <button
           type = 'button'
           onClick = {this.props.passCloseEditWindow}>
             x
         </button>
 
-        <ul>
-          <li>Location: {this.props.passCommArr.name}</li>
-          <li>Population: {this.props.passCommArr.population}</li>
-          <li>Hemisphere: {this.props.passObjComm.whichSphere(x)}</li>
-          <li>Size: {this.props.passCommArr.howBig()}</li>
+        <ul id = 'editUl'>
+          <li className = 'editLi'>Location: <br />{this.props.passCommArr.name}</li>
+          <li className = 'editLi'>Population:<br /> {this.props.passCommArr.population}</li>
+          <li className = 'editLi'>Hemisphere:<br />{this.props.passObjComm.whichSphere(x)}</li>
+          <li className = 'editLi'>Size:<br />{this.props.passCommArr.howBig()}</li>
         </ul>
 
         <PopulationComp
           passCommArr = {this.props.passCommArr}
-          passCounter = {this.props.passCounter}
-          passReRender = {this.props.passReRender}/>
+          passReRender = {this.props.passReRender}
+          passPopulationState = {this.props.passPopulationState}/>
       </div>
     )
   }

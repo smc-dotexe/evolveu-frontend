@@ -16,8 +16,7 @@ class CommCityComp extends React.Component {
         displayEditWindow: false,
         editId:'',
         arrId:'',
-        counter: 0,
-
+        population: '',
       }
   }
 
@@ -29,7 +28,6 @@ class CommCityComp extends React.Component {
 
     this.objCommunity.deleteCity(cityId)
     this.closeEditWindow()
-    this.setState({counter: this.state.counter - 1})
 
   }
 //WHEN EDIT BUTTON IS CLICKED
@@ -49,31 +47,39 @@ class CommCityComp extends React.Component {
     this.setState({displayEditWindow: false})
   }
 
+//SUBMITTING USER INPUTS
   newSubmit = (event) => {
 
     let locInput = document.getElementById('locationInput').value
     let latInput = Number(document.getElementById('latitudeInput').value)
     let longInput = Number(document.getElementById('longitudeInput').value)
     let popInput = Number(document.getElementById('populationInput').value)
-
-    this.setState({counter: this.state.counter + 1})
+    this.setState({population: popInput})
     this.objCommunity.addCity(locInput, latInput, longInput, popInput)
-
-
+    console.log('population state ', this.state.population)
   }
 
+//RERENDERING WHEN POPULATION IS UPDATED
   reRender = () => {this.setState({refresh: !this.state.refresh})}
 
   render() {
 
-      let city = this.objCity
-
     return(
       <div className = 'commCityComp'>
-        <h1>Cities and Communities</h1>
-        <CitySummaries
-          passObjCommunity = {this.objCommunity}/>
-        <div>
+        <h1 id = 'cityHeader'>Cities and Communities</h1>
+        <div id = 'editWindow'>
+          {this.state.displayEditWindow ?
+            <EditWindow
+              passObjComm = {this.objCommunity}
+              passCommArr = {this.objCommunity.communityArr[this.state.editId]}
+              passCloseEditWindow = {this.closeEditWindow}
+              passReRender = {this.reRender}
+              passArrIdState = {this.state.arrId}
+              passPopulationState = {this.state.population}/>
+               : null}
+        </div>
+
+        <div id ='renderTable'>
           <RenderingTable
             passObjCommunity = {this.objCommunity}
             passNewSubmit = {this.newSubmit}
@@ -81,19 +87,11 @@ class CommCityComp extends React.Component {
             passEditBtn = {this.editBtn}
           />
         </div>
-        <div>
-          {this.state.displayEditWindow ?
-            <EditWindow
-              passObjComm = {this.objCommunity}
-              passCommArr = {this.objCommunity.communityArr[this.state.editId]}
-              passEditIdState = {this.state.editId}
-              passCloseEditWindow = {this.closeEditWindow}
-              passCounter = {this.state.counter}
-              passReRender = {this.reRender}
-              passArrIdState = {this.state.arrId}/>
-               : null}
-        </div>
 
+        <div id = 'citySummaries'>
+        <CitySummaries
+          passObjCommunity = {this.objCommunity}/>
+        </div>
       </div>
     )
   }

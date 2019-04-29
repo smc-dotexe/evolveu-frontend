@@ -18,9 +18,8 @@ class Community {
   }
 
     whichSphere(a) {
-      console.log('a whichsphere ', a)
       let x = this.findCityIndex(a)
-      console.log('x whichsphere ', x)
+
       if (this.communityArr[x].latitude > 0) {
         return 'Northern Hemisphere'
       } else if (this.communityArr[x].latitude < 0) {
@@ -68,11 +67,6 @@ class Community {
       }
   }
 
-    showDetail(a) {
-      let x = this.findCityIndex(a)
-      let city = new CityClass()
-      city.show(a)
-  }
 }
 
 export default Community

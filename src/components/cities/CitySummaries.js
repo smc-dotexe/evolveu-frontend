@@ -8,10 +8,10 @@ class CitySummaries extends React.Component {
   render() {
     return (
       <div>
-        <ul>
-          <li>Total Population: {this.props.passObjCommunity.getPopulation()}</li>
-          <li>Most Northern Location: {this.props.passObjCommunity.getMostNorthern()}</li>
-          <li>Most Southern Location: {this.props.passObjCommunity.getMostSouthern()}</li>
+        <ul id = 'citySummUl'>
+          <li className = 'citySummLi'>Total Population: {this.props.passObjCommunity.getPopulation()}</li>
+          <li className = 'citySummLi'>Most Northern Location: {this.props.passObjCommunity.getMostNorthern()}</li>
+          <li className = 'citySummLi'>Most Southern Location: {this.props.passObjCommunity.getMostSouthern()}</li>
         </ul>
       </div>
     )
