@@ -14,3 +14,19 @@ test('default values of CityClass', () => {
   let city = new CityClass()
   expect(city.name).toEqual('a place')
 })
+
+test('create myCity', () => {
+  let myCity = new CityClass(1, 'mycity', 100, 100, 10000)
+  expect(myCity.population).toBe(10000)
+
+  let myFav = myCity
+  expect(myFav.population).toBe(10000)
+
+  myCity.movedIn(100)
+  expect(myCity.population).toBe(10100)
+  expect(myFav.population).toBe(10100)
+
+  myFav.movedIn(500)
+  expect(myCity.population).toBe(10600)
+  expect(myFav.population).toBe(10600)
+})

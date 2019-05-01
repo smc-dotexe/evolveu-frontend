@@ -10,7 +10,6 @@ class AccountClass {
   deposit(a) {
     console.log(a)
     this.balance += a
-    console.log('this.balance= ', this.balance)
     return this.balance
   }
 

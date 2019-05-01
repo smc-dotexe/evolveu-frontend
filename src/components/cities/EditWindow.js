@@ -30,8 +30,7 @@ class EditWindow extends React.Component {
 
         <PopulationComp
           passCommArr = {this.props.passCommArr}
-          passReRender = {this.props.passReRender}
-          passPopulationState = {this.props.passPopulationState}/>
+          passReRender = {this.props.passReRender}/>
       </div>
     )
   }

@@ -11,7 +11,6 @@ class CommCityComp extends React.Component {
     super()
       this.objCity = new CityClass()
       this.objCommunity = new CommunityClass()
-      this.objCommunity.addCity('test', 100, 200, 300)
       this.state = {
         displayEditWindow: false,
         editId:'',
@@ -34,7 +33,6 @@ class CommCityComp extends React.Component {
   editBtn = (event) => {
     let x = event.target.id
     let arrId = this.objCommunity.communityArr[x].id
-    console.log ('arrId', arrId)
     this.setState({
       displayEditWindow: true,
       editId: x,
@@ -54,9 +52,9 @@ class CommCityComp extends React.Component {
     let latInput = Number(document.getElementById('latitudeInput').value)
     let longInput = Number(document.getElementById('longitudeInput').value)
     let popInput = Number(document.getElementById('populationInput').value)
+
     this.setState({population: popInput})
     this.objCommunity.addCity(locInput, latInput, longInput, popInput)
-    console.log('population state ', this.state.population)
   }
 
 //RERENDERING WHEN POPULATION IS UPDATED

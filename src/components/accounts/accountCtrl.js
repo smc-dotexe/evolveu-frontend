@@ -63,8 +63,6 @@ class AccountCtrl {
 
   showAccount(a) {
     let x = this.findAccountIndex(a)
-    console.log(x)
-
     return this.accountArr[x]
   }
 

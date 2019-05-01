@@ -25,6 +25,7 @@ class AccountCreatorComp extends React.Component {
         placeholder = 'Enter Balance '
         name = 'inputAccountBalance'/>
       <br />
+      
 {/*CREATE ACCOUNT BUTTON */}
       <button
         type = 'button'

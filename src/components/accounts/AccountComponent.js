@@ -8,7 +8,6 @@ import './stylingAccounts.css'
 class AccountComponent extends React.Component {
   constructor(props) {
     super(props)
-      console.log('props = ', props)
       this.objAccount = new AccountClass()
         this.state = {
           userInput:'',
@@ -30,12 +29,9 @@ class AccountComponent extends React.Component {
 
     switch (y) {
       case 'deposit':
-        console.log('userinput state = ', x)
         this.props.passObj[theId].balance =
         this.props.objCtrl.depositUpdate(theId, x)
-        this.setState({
-          userInput: '',
-      })
+        this.setState({userInput: ''})
       break
       case 'withdrawal':
         this.props.passObj[theId].balance =
