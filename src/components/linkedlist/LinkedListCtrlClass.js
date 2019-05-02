@@ -5,50 +5,63 @@ class LinkedListCtrlClass {
     this.head = null
     this.tail = null
     this.position = null
+    this.length = 0
   }
 
   first() {
-    let temp = this.position
-    while(temp.prev !== null) {
-      temp = temp.prev
+    while (this.position.prev !== null) {
+      this.position = this.position.prev
     }
-    return temp.subject
+    return this.position
   }
 
-
   last() {
-    let temp = this.position
-    while(temp.next !== null) {
-      temp = temp.next
+    while(this.position.next !==null) {
+      this.position = this.position.next
     }
-    return temp.subject
+    return this.position
   }
 
   next() {
-    let temp = this.position
-    if (temp.next !== null) {
-      console.log(temp.subject)
-      return temp.next
-
-    }
-  }
-
-
-  insert(a, b) {
-    let node = new NodeClass(a, b)
-    if(!this.head) {
-      this.head = node
-      this.tail = node
-      this.position = node
+    if (this.position.next !== null) {
+      this.position = this.position.next
+      return this.position
     } else {
-      let temp = this.tail
-      this.tail = node
-      node.prev = temp
-      temp.next = node
+      return this.position
     }
-
-    return this
   }
+
+  previous() {
+    if (this.position.prev !== null) {
+      this.position = this.position.prev
+      return this.position
+    } else {
+      return this.position
+    }
+  }
+
+    insert(a, b) {
+      let node = new NodeClass(a, b)
+      if (!this.head) {
+          this.head = node
+          this.tail = node
+          this.position = node
+
+      } else if (this.position.next !== null) {
+          node.prev = this.position
+          node.next = this.position.next
+          this.position.next.prev = node
+          this.position = node 
+
+      } else {
+          this.tail = node
+          node.prev = this.position
+          this.position.next = node
+          this.position = node
+      }
+      this.length++
+      return this
+    }
 }
 
 export default LinkedListCtrlClass
