@@ -5,6 +5,7 @@ class LinkedListCtrlClass {
     this.head = null
     this.tail = null
     this.position = null
+    this.length = 0
   }
 
   first() {
@@ -68,6 +69,7 @@ class LinkedListCtrlClass {
           this.position = node
 
       }
+      this.length++
       return this
     }
 
@@ -101,6 +103,7 @@ class LinkedListCtrlClass {
             this.position.next.prev = this.position.prev
             this.position = this.position.next
        }
+       this.length--
       return this
    }
 }

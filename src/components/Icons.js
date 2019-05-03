@@ -2,6 +2,7 @@ import React from 'react'
 import MathComp from './MathComp'
 import AccountsContainer from './accounts/AccountContainer'
 import CommCityComp from './cities/CommCityComp'
+import LinkedList from './linkedlist/LinkedListComp'
 import './accounts/stylingAccounts.css'
 import '.././App.css'
 
@@ -11,6 +12,7 @@ export default class Icons extends React.Component {
     calculator: false,
     accounts: false,
     cities: false,
+    linkList: false,
   }
 
   clickHandler = (event) => {
@@ -22,6 +24,7 @@ export default class Icons extends React.Component {
           calculator: !prevState.calculator,
           accounts: false,
           cities: false,
+          linkedList: false,
         }))
         break
 
@@ -30,6 +33,7 @@ export default class Icons extends React.Component {
           accounts: !prevState.accounts,
           calculator: false,
           cities: false,
+          linkedList: false,
         }))
         break
 
@@ -38,8 +42,17 @@ export default class Icons extends React.Component {
           cities: !prevState.cities,
           calculator: false,
           accounts: false,
+          linkedList: false,
         }))
         break
+
+      case 'linkedList':
+        this.setState(prevState => ({
+          linkedList: !prevState.linkedList,
+          cities: false,
+          calculator: false,
+          accounts: false,
+        }))
       default:
         return null
 
@@ -78,7 +91,11 @@ export default class Icons extends React.Component {
           </div>
 
           <div className = 'icon'>
-            <i className='uil uil-focus'></i>
+            <i
+              id = 'linkedList'
+              className='uil uil-link'
+              value = {this.state.linkedList}
+              onClick = {this.clickHandler}></i>
           </div>
 
           </div>
@@ -87,6 +104,7 @@ export default class Icons extends React.Component {
         {this.state.calculator ? <MathComp /> : null}
         {this.state.accounts ? <AccountsContainer /> : null}
         {this.state.cities ? <CommCityComp /> : null}
+        {this.state.linkedList ? <LinkedList />: null}
 
       </div>
 
