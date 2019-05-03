@@ -33,3 +33,22 @@ test('test equator', () => {
   comm.addCity('testing', 0, 0, 100)
   expect(comm.whichSphere(1)).toEqual('On the Equator')
 })
+
+test('remaining test coverage lines', () => {
+  let comm = new CommunityClass()
+  comm.addCity('test A', 100, 100, 100)
+
+  expect(comm.whichSphere(1)).toEqual('Northern Hemisphere')
+
+  comm.deleteCity(1)
+  expect(comm.getMostNorthern()).toEqual(null)
+  expect(comm.getMostSouthern()).toEqual(null)
+
+  comm.deleteCity()
+
+  comm.addCity('test B', 200, 200, 200)
+  expect(comm.getMostNorthern()).toEqual('test B')
+
+  comm.addCity('test C', 100, 100, 100)
+  expect(comm.getMostSouthern()).toEqual('test C')
+})

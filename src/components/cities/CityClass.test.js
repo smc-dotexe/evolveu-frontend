@@ -30,3 +30,17 @@ test('create myCity', () => {
   expect(myCity.population).toBe(10600)
   expect(myFav.population).toBe(10600)
 })
+
+test('remaining test coverage lines ', () => {
+  let city = new CityClass(1, 'City A', 100, 100, 101)
+
+  expect(city.howBig()).toEqual('Village')
+  city.movedOut(50)
+  expect(city.howBig()).toEqual('Hamlet')
+  city.movedIn(1500)
+  expect(city.howBig()).toEqual('Town')
+  city.movedIn(25000)
+  expect(city.howBig()).toEqual('Large Town')
+  city.movedOut(50000)
+  expect(city.howBig()).toEqual(null)
+})

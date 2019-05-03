@@ -9,4 +9,6 @@ test('check if functions work ', () => {
   expect(acct.balance).toBe(30)
   acct.accountIdIncrease()
   expect(acct.accountId).toBe(1)
+  expect(acct.currentBalance(0)).toBe(30)
+  expect(acct.accountType('savings')).toEqual('savings')
 })
