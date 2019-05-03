@@ -8,41 +8,41 @@ class LinkedListCtrlClass {
     this.length = 0
   }
 
-  first() {
-    while (this.position.prev !== null) {
-      this.position = this.position.prev
-    }
-    return this.position
-  }
-
-  last() {
-    while(this.position.next !==null) {
-      this.position = this.position.next
-    }
-    return this.position
-  }
-
-  next() {
-    if (this.position.next !== null) {
-      this.position = this.position.next
-      return this.position
-    } else {
+    first() {
+      while (this.position.prev !== null) {
+        this.position = this.position.prev
+      }
       return this.position
     }
-  }
 
-  previous() {
-    if (this.position.prev !== null) {
-       this.position = this.position.prev
-      return this.position
-    } else {
+    last() {
+      while(this.position.next !==null) {
+        this.position = this.position.next
+      }
       return this.position
     }
-  }
 
-  current() {
-    return this.position
-  }
+    next() {
+      if (this.position.next !== null) {
+        this.position = this.position.next
+        return this.position
+      } else {
+        return this.position
+      }
+    }
+
+    previous() {
+      if (this.position.prev !== null) {
+         this.position = this.position.prev
+        return this.position
+      } else {
+        return this.position
+      }
+    }
+
+    current() {
+      return this.position
+    }
 
     insert(a, b) {
       let node = new NodeClass(a, b)

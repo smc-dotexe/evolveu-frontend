@@ -1,9 +1,22 @@
 .linkedListContainer {
   width: 80%;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
 }
 
 input {
   text-align: center;
+  margin: 5px;
+}
+
+.navMenu {
+  margin: 5px;
+}
+
+.navMenu > button {
+  margin: 3px;
 }

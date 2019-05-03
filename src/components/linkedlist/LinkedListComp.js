@@ -8,7 +8,6 @@ class LinkedListComp extends React.Component {
     super()
       this.objLinkedListCtrl = new LinkedListCtrlClass
       this.objNodeClass = new NodeClass
-
       this.state = {
       display:'',
     }
@@ -17,8 +16,12 @@ class LinkedListComp extends React.Component {
   create = () => {
     let subjectInput = document.getElementById('subjectInput').value
     let amountInput = Number(document.getElementById('amountInput').value)
+    if(subjectInput === '' || amountInput === '') {
+      alert('Please Enter The Information')
+    } else {
      this.objLinkedListCtrl.insert(subjectInput, amountInput)
      this.showData()
+   }
   }
 
   showData = () => {
@@ -32,31 +35,35 @@ class LinkedListComp extends React.Component {
   clickHandler = (event) => {
     let x = event.target.id
 
-    switch(x) {
-      case 'first':
-        this.objLinkedListCtrl.first()
-        this.showData()
-        break
-      case 'previous':
-        this.objLinkedListCtrl.previous()
-        this.showData()
-        break
-      case 'delete':
-        this.objLinkedListCtrl.delete()
-        this.showData()
-        break
-      case 'next':
-        this.objLinkedListCtrl.next()
-        this.showData()
-        break
-      case 'last':
-        this.objLinkedListCtrl.last()
-        this.showData()
-        break
-      default:
-        return null
-    }
-  }
+    if(this.objLinkedListCtrl.length !== 0){
+        switch(x) {
+          case 'first':
+            this.objLinkedListCtrl.first()
+            this.showData()
+            break
+          case 'previous':
+            this.objLinkedListCtrl.previous()
+            this.showData()
+            break
+          case 'delete':
+            this.objLinkedListCtrl.delete()
+            this.showData()
+            break
+          case 'next':
+            this.objLinkedListCtrl.next()
+            this.showData()
+            break
+          case 'last':
+            this.objLinkedListCtrl.last()
+            this.showData()
+            break
+          default:
+            return null
+        }
+      } else {
+        return
+      }
+}
 
 
 
@@ -64,6 +71,7 @@ class LinkedListComp extends React.Component {
   render() {
     return(
       <div className = 'linkedListContainer'>
+        <h1>Linked List</h1>
         <div className = 'menu'>
           <input id = 'subjectInput' type = 'text' placeholder = 'Enter Subject' /><br />
           <input id = 'amountInput' type = 'number' placeholder = 'Enter Amount' /><br />
