@@ -24,5 +24,9 @@ test('functions for linked list ctrl class ', () => {
   linkedList.previous()
   linkedList.previous()
   linkedList.insert('newest', 6)
-  console.log(linkedList)
+
+
+  linkedList.next()
+  linkedList.delete()
+  
 })

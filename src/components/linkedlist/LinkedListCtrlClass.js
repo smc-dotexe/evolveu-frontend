@@ -33,12 +33,13 @@ class LinkedListCtrlClass {
 
   previous() {
     if (this.position.prev !== null) {
-      this.position = this.position.prev
+       this.position = this.position.prev
       return this.position
     } else {
       return this.position
     }
   }
+
 
     insert(a, b) {
       let node = new NodeClass(a, b)
@@ -50,8 +51,9 @@ class LinkedListCtrlClass {
       } else if (this.position.next !== null) {
           node.prev = this.position
           node.next = this.position.next
-          this.position.next.prev = node
-          this.position = node 
+          this.position.next = node
+          node.next.prev = node
+          this.position = node
 
       } else {
           this.tail = node
@@ -62,6 +64,45 @@ class LinkedListCtrlClass {
       this.length++
       return this
     }
-}
 
+    delete() {
+      if (this.position.next !== null && this.position.prev !== null){
+
+            this.position.prev.next = this.position.next
+            this.position.next.prev = this.position.prev
+            this.position = this.position.next
+            this.length--
+
+          return this
+
+      } else if (this.position.next === null && this.position.prev !== null) {
+
+            this.position.prev.next = null
+            this.tail = this.position.prev
+            this.position = this.position.prev
+            this.length--
+
+          return this
+
+      } else if (this.position.prev === null && this.position.next !== null) {
+
+            this.position.next.prev = null
+            this.head = this.position.next
+            this.position = this.position.next
+            this.length--
+
+          return this
+
+      } else if (this.position.next === null && this.position.prev === null){
+
+            this.head = null
+            this.position = null
+            this.tail = null
+            this.length--
+
+          return this
+      }
+
+   }
+}
 export default LinkedListCtrlClass
