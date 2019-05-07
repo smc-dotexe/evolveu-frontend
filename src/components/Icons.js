@@ -3,12 +3,14 @@ import MathComp from './MathComp'
 import AccountsContainer from './accounts/AccountContainer'
 import CommCityComp from './cities/CommCityComp'
 import LinkedList from './linkedlist/LinkedListComp'
+import Home from './home/Home'
 import './accounts/stylingAccounts.css'
 import '.././App.css'
 
 export default class Icons extends React.Component {
   state = {
     isClicked: false,
+    home: true,
     calculator: false,
     accounts: false,
     cities: false,
@@ -17,11 +19,23 @@ export default class Icons extends React.Component {
 
   clickHandler = (event) => {
     const { id } = event.target
-    console.log(id)
     switch(id) {
+      case 'home':
+        this.setState(prevState =>({
+          home: !prevState.home,
+          calculator: false,
+          accounts: false,
+          cities: false,
+          linkedList: false,
+        }))
+        if (this.state.home) {
+
+        }
+        break
       case 'calculator' :
         this.setState(prevState => ({
           calculator: !prevState.calculator,
+          home: false,
           accounts: false,
           cities: false,
           linkedList: false,
@@ -31,6 +45,7 @@ export default class Icons extends React.Component {
       case 'accounts' :
         this.setState(prevState => ({
           accounts: !prevState.accounts,
+          home: false,
           calculator: false,
           cities: false,
           linkedList: false,
@@ -40,6 +55,7 @@ export default class Icons extends React.Component {
       case 'cities' :
         this.setState(prevState => ({
           cities: !prevState.cities,
+          home: false,
           calculator: false,
           accounts: false,
           linkedList: false,
@@ -49,6 +65,7 @@ export default class Icons extends React.Component {
       case 'linkedList':
         this.setState(prevState => ({
           linkedList: !prevState.linkedList,
+          home: false,
           cities: false,
           calculator: false,
           accounts: false,
@@ -67,7 +84,15 @@ export default class Icons extends React.Component {
       <div>
           <div className = 'iconheader'>
 
-          <div className = 'icon'>
+          <div className ={this.state.home ? 'iconBorder' : 'iconNoBorder'}>
+            <i
+              id = 'home'
+              className ='uil uil-home'
+              value = {this.state.home}
+              onClick = {this.clickHandler}></i>
+          </div>
+
+          <div className ={this.state.calculator ? 'iconBorder' : 'iconNoBorder'}>
             <i
               id = 'calculator'
               className= 'uil uil-calcualtor'
@@ -75,7 +100,7 @@ export default class Icons extends React.Component {
               onClick = {this.clickHandler}></i>
           </div>
 
-          <div className = 'icon'>
+          <div className ={this.state.accounts ? 'iconBorder' : 'iconNoBorder'}>
             <i
               id = 'accounts'
               className= 'uil uil-bill'
@@ -83,7 +108,7 @@ export default class Icons extends React.Component {
               onClick = {this.clickHandler}></i>
           </div>
 
-          <div className = 'icon'>
+          <div className ={this.state.cities ? 'iconBorder' : 'iconNoBorder'}>
             <i
               id = 'cities'
               className = 'uil uil-building'
@@ -91,7 +116,7 @@ export default class Icons extends React.Component {
               onClick = {this.clickHandler}></i>
           </div>
 
-          <div className = 'icon'>
+          <div className ={this.state.linkedList ? 'iconBorder' : 'iconNoBorder'}>
             <i
               id = 'linkedList'
               className='uil uil-link'
@@ -102,6 +127,7 @@ export default class Icons extends React.Component {
           </div>
 
       <div>
+        {this.state.home ? <Home /> : null}
         {this.state.calculator ? <MathComp /> : null}
         {this.state.accounts ? <AccountsContainer /> : null}
         {this.state.cities ? <CommCityComp /> : null}
