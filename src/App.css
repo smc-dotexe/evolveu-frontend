@@ -27,15 +27,14 @@
 } */
 
 .iconBorder:hover {
-  border-top: 3px solid green;
-  border-radius: 3px;
+  background-color: #96ff9f;
 }
 .iconNoBorder:hover {
-  border-top: 3px solid grey;
+  background-color: #57af5f;
   border-radius: 3px;
 }
-.icon:active {
-  background-color: green;
+.iconNoBorder:active {
+  border: 3px dashed green;
 }
 
 .iconBorder {
