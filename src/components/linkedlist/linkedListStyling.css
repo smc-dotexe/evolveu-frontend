@@ -25,3 +25,37 @@ input {
 .navMenu > button {
   margin: 3px;
 }
+
+#fifoLifoSection {
+  margin-top: 60px;
+  border-top: 1px solid gray;
+  padding: 5px;
+}
+
+#fifoLifoCompContainer {
+  background-color: #e9e9e9;
+}
+
+#fifoLifoCompContainer{
+  margin: 0;
+  padding: 0;
+}
+
+#fifoLifoCompContainer > h4 {
+  margin: 0;
+  padding: 0;
+}
+.pLifoArr {
+  height: 30px;
+}
+
+.pFifoArr {
+  height: 30px;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}

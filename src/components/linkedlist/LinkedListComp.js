@@ -94,15 +94,16 @@ class LinkedListComp extends React.Component {
         <div className = 'showLinkList'>
           <h4>{this.state.display}</h4>
         </div>
-      </div>
-
-        <div>
+        <div id = 'fifoLifoSection'>
           <button onClick = {this.displayFLComp}>
             FifoLifo
           </button>
           {this.state.displayFLComp ? <FifoLifoComp /> : null}
         </div>
       </div>
+      </div>
+
+
     )
   }
 }

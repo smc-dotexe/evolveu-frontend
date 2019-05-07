@@ -1,6 +1,8 @@
 import React from 'react'
 import StackClass from './StackClass'
 import QClass from './QClass'
+import '.././linkedListStyling.css'
+
 
 class FifoLifoComp extends React.Component {
   constructor() {
@@ -65,20 +67,21 @@ class FifoLifoComp extends React.Component {
 
   render() {
     return(
-      <div>
+      <div id = 'fifoLifoCompContainer'>
         <div className = 'lifo'>
           <h4>Lifo/Stack</h4>
           <input id = 'lifoInput' type = 'text' placeholder = 'Lifo'/>
           <button id = 'push' onClick = {this.handler}>Push</button>
           <button id = 'pop' onClick = {this.handler}>Pop</button>
-          <p>{this.state.displayLifoArr}</p>
+          <p className = 'pLifoArr'>{this.state.displayLifoArr}</p>
         </div>
+          <hr />
         <div className = 'fifo'>
           <h4>Fifo/Queue</h4>
           <input id = 'fifoInput' type = 'text' placeholder = 'Fifo'/>
           <button id = 'fifoPush' onClick = {this.handler}>Push</button>
           <button id = 'remove' onClick = {this.handler}>Shift</button>
-          <p>{this.state.displayFifoArr}</p>
+          <p className = 'pFifoArr'>{this.state.displayFifoArr}</p>
         </div>
       </div>
 
