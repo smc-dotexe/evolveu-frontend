@@ -31,7 +31,7 @@
   border-radius: 3px;
 }
 .iconNoBorder:hover {
-  border-top: 3px solid green;
+  border-top: 3px solid grey;
   border-radius: 3px;
 }
 .icon:active {
