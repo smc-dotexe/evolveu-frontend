@@ -69,9 +69,7 @@ class AccountContainer extends React.Component {
   deleteAccount = (event) => {
     let x = event.target.id
     let accountId = this.objAccountCtrl.accountArr[x].accountId
-
     this.objAccountCtrl.deleteAccount(accountId)
-
     this.closeDisplay()
   }
 

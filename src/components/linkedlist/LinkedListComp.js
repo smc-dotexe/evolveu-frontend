@@ -1,6 +1,7 @@
 import React from 'react'
 import LinkedListCtrlClass from './LinkedListCtrlClass'
 import NodeClass from './NodeClass'
+import FifoLifoComp from './stackandq/FifoLifoComp'
 import './linkedListStyling.css'
 
 class LinkedListComp extends React.Component {
@@ -10,6 +11,7 @@ class LinkedListComp extends React.Component {
       this.objNodeClass = new NodeClass
       this.state = {
       display:'',
+      displayFLComp: false,
     }
 }
 
@@ -65,13 +67,17 @@ class LinkedListComp extends React.Component {
       }
 }
 
-
+  displayFLComp = () => {
+    this.setState(prevState => ({displayFLComp: !prevState.displayFLComp}))
+  }
 
 
   render() {
     return(
+      <div>
       <div className = 'linkedListContainer'>
         <h1>Linked List</h1>
+        <div className = 'menuContainer'>
         <div className = 'menu'>
           <input id = 'subjectInput' type = 'text' placeholder = 'Enter Subject' /><br />
           <input id = 'amountInput' type = 'number' placeholder = 'Enter Amount' /><br />
@@ -84,8 +90,17 @@ class LinkedListComp extends React.Component {
           <button id = 'next' onClick = {this.clickHandler}>{'>'}</button>
           <button id = 'last' onClick = {this.clickHandler}>{'>|'}</button>
         </div>
+        </div>
         <div className = 'showLinkList'>
           <h4>{this.state.display}</h4>
+        </div>
+      </div>
+
+        <div>
+          <button onClick = {this.displayFLComp}>
+            FifoLifo
+          </button>
+          {this.state.displayFLComp ? <FifoLifoComp /> : null}
         </div>
       </div>
     )

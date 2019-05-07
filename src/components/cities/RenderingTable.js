@@ -8,7 +8,6 @@ class RenderingTable extends React.Component {
   }
 
   render() {
-    console.log('rendering table: ', this.props.passObjCommunity)
     let create
     create = this.props.passObjCommunity.communityArr.map((y, z) =>
 

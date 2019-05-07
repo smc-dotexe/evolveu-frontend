@@ -3,11 +3,16 @@
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
   text-align: center;
   padding: 5px;
 }
 
+.menuContainer {
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+}
 input {
   text-align: center;
   margin: 5px;
