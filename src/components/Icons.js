@@ -4,6 +4,7 @@ import AccountsContainer from './accounts/AccountContainer'
 import CommCityComp from './cities/CommCityComp'
 import LinkedList from './linkedlist/LinkedListComp'
 import Home from './home/Home'
+import FlaskList from './flask/FlaskList'
 import './accounts/stylingAccounts.css'
 import '.././App.css'
 
@@ -14,11 +15,13 @@ export default class Icons extends React.Component {
     calculator: false,
     accounts: false,
     cities: false,
-    linkList: false,
+    linkedList: false,
+    flask: false,
   }
 
   clickHandler = (event) => {
     const { id } = event.target
+    console.log('ID', id)
     switch(id) {
       case 'home':
         this.setState(prevState =>({
@@ -27,6 +30,7 @@ export default class Icons extends React.Component {
           accounts: false,
           cities: false,
           linkedList: false,
+          flask: false,
         }))
         if (this.state.home) {
 
@@ -39,6 +43,7 @@ export default class Icons extends React.Component {
           accounts: false,
           cities: false,
           linkedList: false,
+          flask: false,
         }))
         break
 
@@ -49,6 +54,7 @@ export default class Icons extends React.Component {
           calculator: false,
           cities: false,
           linkedList: false,
+          flask: false,
         }))
         break
 
@@ -59,6 +65,7 @@ export default class Icons extends React.Component {
           calculator: false,
           accounts: false,
           linkedList: false,
+          flask: false,
         }))
         break
 
@@ -69,8 +76,21 @@ export default class Icons extends React.Component {
           cities: false,
           calculator: false,
           accounts: false,
+          flask: false,
         }))
         break
+      
+      case 'flask':
+        this.setState(prevState => ({
+          flask: !prevState.flask,
+          home: false,
+          cities: false,
+          calculator: false,
+          accounts: false,
+          linkedList: false,
+        }))
+        break
+
       default:
         return null
 
@@ -124,6 +144,13 @@ export default class Icons extends React.Component {
               onClick = {this.clickHandler}></i>
           </div>
 
+          <div className = {this.state.flask ? 'iconBorder' : 'iconNoBorder'}>
+          <i 
+            id = 'flask'
+            className='uil uil-table'
+            value = {this.state.flask}
+            onClick = {this.clickHandler}></i>
+          </div>
           </div>
 
       <div>
@@ -132,6 +159,7 @@ export default class Icons extends React.Component {
         {this.state.accounts ? <AccountsContainer /> : null}
         {this.state.cities ? <CommCityComp /> : null}
         {this.state.linkedList ? <LinkedList />: null}
+        {this.state.flask ? <FlaskList /> : null}
 
       </div>
 
