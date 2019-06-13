@@ -1,0 +1,64 @@
+/************************************************
+WORKING WITH CARDS
+**********************************************/
+
+
+#split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 100px;
+
+}
+
+#leftSide {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+}
+
+#rightSide {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+}
+
+.leftCardDiv {
+  background: grey;
+  border: 1px solid black;
+  width: 80%;
+  height: 130px;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "a counter empty"
+    "addafter addBefore delete";
+
+}
+
+.addAfter {
+  justify-self: end;
+  align-self: end;
+  grid-area: addafter;
+}
+
+.addBefore {
+  justify-self: center;
+  align-self: end;
+  grid-area: addBefore;
+}
+
+.delete {
+  justify-self: start;
+  align-self: end;
+  grid-area: delete;
+}
+
+.counter {
+  grid-area: counter;
+  justify-self: center;
+  align-self: center;
+ }

@@ -17,7 +17,6 @@ class FlaskList extends React.Component {
 
 
   render(){
-    console.log(this.state.display)
     let list 
     list = this.state.data.map((a, b) => 
       <ul key={b}>
