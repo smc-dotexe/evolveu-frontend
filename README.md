@@ -20,7 +20,7 @@
 
 <h3> src folder (React App)</h3>
 <p>
-   Our React Compentency are multiple assignments that build slightly on top of each other. They are each conditionally rendered using state management. You will find a basic calculator, a dynamic account banking list using cards. The city/community application allows you to add a city, modify it's population then it will detect whether it's a town/city/hamlet, etc. There's also an example of a linked list. Each of these components have their own test files using vanilla javascript. 
+   Our React Compentency are multiple assignments that build slightly on top of each other. They are each conditionally rendered using state management. You will find a basic calculator and a dynamic account banking list using cards. The city/community application allows you to add a city, modify it's population then it will detect whether it's a town/city/hamlet, etc. There's also an example of a linked list. Each of these components have their own test files using vanilla javascript. 
 </p>
    
 <h3>Installation for the React App</h3>
